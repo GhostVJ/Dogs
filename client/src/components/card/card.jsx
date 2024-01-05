@@ -1,13 +1,18 @@
+import { Link } from "react-router-dom";
 import './card.css';
 
 function Card({dog}) {
-   const {reference_image_id, name, temperament, weight} = dog
+
+  //console.log(dog);
+
+   const {image, name, temperaments, weight, id} = dog
   return (
     <div className="Card">
-    <h4>Imagen:{reference_image_id}</h4><hr/>
-    <h4>Nombre:{name}</h4>
-    <h4>Temperamentos:{temperament}</h4>
-    <h4>Peso:{weight}</h4>
+    <img src={image} /><hr/>
+    <h3>{name}</h3>
+    <h5>{temperaments}</h5>
+    <h5>{weight} kg</h5>
+    <Link to={`home/${id}`}>Detalles</Link>
 
 
 

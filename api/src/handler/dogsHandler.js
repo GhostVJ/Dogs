@@ -28,10 +28,10 @@ const getDetailHandler = async(req,res)=>{
 };
 
 const postAddDogHandler = async(req,res)=>{
-    const {image, name, height, weight, lifespan} = req.body;
+    const {image, name, height, weight, lifespan, temperament} = req.body;
 
     try {
-        const response = await createDogsDB(image, name, height, weight, lifespan);
+        const response = await createDogsDB(image, name, height, weight, lifespan, temperament);
         res.status(200).json(response)
     } catch (error) {
         res.status(400).json({error:error.message})

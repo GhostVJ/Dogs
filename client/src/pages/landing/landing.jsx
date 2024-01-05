@@ -1,11 +1,20 @@
-import './landing.css';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import "./landing.css";
 
-function Landing() {
+const LandingPage = () => {
+  const history = useHistory();
+
+  const handleEnterClick = () => {
+    history.push('/Home');
+  };
+
   return (
-    <div className="Landing">
-      <h1>Landing</h1>
+    <div>
+      <img src="./images/landing/fondo.png" alt="Heppy Dogs" /><br/>
+      <button onClick={handleEnterClick} className="bounce-top">Ingresar</button>
     </div>
   );
-}
+};
 
-export default Landing;
+export default LandingPage;

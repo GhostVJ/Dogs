@@ -1,12 +1,22 @@
+import { Link } from "react-router-dom";
 import './navbar.css';
 
-function Navbar() {
+function Navbar({handleChange, handleSubmit}) {
   return (
     <div className="NavBar">
-        <form>
-          <input type="text" className='searchtext' placeholder='Buscar' />
-          <button>Buscar</button>
+       <table><tr><td><form onChange={handleChange}>
+          <input type="search" className='searchtext' placeholder='Buscar'/>
+          <button type="submit" onClick={handleSubmit} className="search-button">
+        <span className="search-icon"></span>
+        Buscar
+      </button>
         </form>
+        </td><td>
+        <form>
+        <Link to="/form"><button className="search-button">Agregar Raza</button></Link>
+        </form>
+        </td>
+        </tr></table>
     </div>
   );
 }
